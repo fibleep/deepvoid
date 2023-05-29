@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { BeachViewComponent } from './beach-view/beach-view.component';
+import { DeepViewComponent } from './deep-view/deep-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BeachViewComponent,
+    DeepViewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
