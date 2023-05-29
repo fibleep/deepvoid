@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,8 @@ import { DeepViewComponent } from './deep-view/deep-view.component';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
