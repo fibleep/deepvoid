@@ -3,7 +3,7 @@
   <form
     *ngIf="!formSubmitted; else submitted"
     [formGroup]="form"
-    (ngSubmit)="onMessageSubmit(form.value)"
+    (ngSubmit)="onMessageSubmit($event, form.value)"
     class="m-auto w-10/12 lg:w-6/12 h-full pt-52 transition z-50 relative"
     id="form"
   >
@@ -43,7 +43,10 @@
   </form>
 
   <ng-template #submitted>
-    <div class="m-auto w-10/12 lg:w-6/12 h-full pt-52 transition z-50 relative">
+    <div
+      class="m-auto w-10/12 lg:w-6/12 h-full pt-52 transition z-50 relative"
+      id="form"
+    >
       <!-- Added 'relative' class -->
       <h1 class="text-5xl text-center text-green-400">
         You've sent a message!
@@ -55,14 +58,13 @@
   </ng-template>
 
   <div
-    *ngFor="let message of messages"
-    class="bubble rounded-full p-5 m-2 bg-slate-400 z-0 relative"
+    *ngFor="
+      let message of messageService.messages$ | async;
+      trackBy: trackByFn"
+    class="bubble rounded-full p-5 m-2 bg-blue-200 z-0 relative border border-slate-500 shadow-md"
     [style.animation-duration]="message.delay + 's'"
     [style.left.%]="message.position"
   >
-    <div class="message-header">
-      <p>{{ message.createdAt | date : "short" }}</p>
-    </div>
     <div class="message-body">
       {{ message.content }}
     </div>
