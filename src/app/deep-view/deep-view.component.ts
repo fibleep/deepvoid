@@ -65,7 +65,7 @@ onMessageSubmit(event: Event, form: { content: string }): void {
   const position = this.getRandomPosition();
   const message: Message = {
     id: uuidv4(),
-    content: this.filter.clean(form.content),
+    content: form.content ? this.filter.clean(form.content) : '',
     createdAt: new Date(),
     position: position,  
     delay: this.getRandomDelay()
@@ -83,6 +83,6 @@ onMessageSubmit(event: Event, form: { content: string }): void {
   }
 
   getRandomPosition(): number {
-    return Math.random() * 90;
+    return Math.random() * 60;
   }
 }
