@@ -1,0 +1,14 @@
+.day {
+  background: linear-gradient(#55d4dd, #ffd792);
+}
+
+.night {
+  background: linear-gradient(
+    to bottom,
+    #191970,
+    #020024,
+    #040b30,
+    #06153c,
+    #081e48
+  );
+}

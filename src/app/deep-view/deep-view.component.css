@@ -1,6 +1,7 @@
 .bubble {
   position: absolute;
   bottom: -1500px;
+  overflow: hidden;
   opacity: 0;
   animation: bubble 25s ease-in-out forwards,
     sideWays 4s ease-in-out infinite alternate;
