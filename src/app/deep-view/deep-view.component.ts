@@ -31,7 +31,7 @@ export class DeepViewComponent implements OnInit {
 
 ngOnInit(): void {
   const messagesRef = ref(this.db, 'messages');
-  const queryResult = query(messagesRef, orderByKey(), limitToFirst(50));
+  const queryResult = query(messagesRef, orderByKey(), limitToFirst(20));
 
   let lastKey: string | null = null;
 
