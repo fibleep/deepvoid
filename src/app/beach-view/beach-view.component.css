@@ -1,5 +1,5 @@
 .day {
-  background: linear-gradient(white, #0095be, #0095be);
+  background: linear-gradient(rgb(78, 180, 248), #0095be, #0095be);
 }
 
 .night {
